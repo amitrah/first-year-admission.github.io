@@ -1,0 +1,375 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Registration Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+<style type="text/css">
+	::placeholder {
+		color: darkblue;
+		border-style: outset;
+		background-color: #00FFFF ;
+	}
+	button {
+		display: inline-block;
+		background-color: #0000FF;
+        border-radius: 10px;
+        border: 4px double;
+        color: whitesmoke;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        padding: 10px;
+        width: 150px;
+        margin: 5px;
+        cursor: progress;
+    }
+    marquee{
+    	color: #DD4124;
+    text-shadow: 0 0 5px yellow, 0 0 10px yellow,
+             0 0 20px #009B77, 0 0 30px #009B77,
+             0 0 40px #009B77;
+    }
+
+}
+	}
+	.fa {  
+  padding: 20px;  
+text-align: center;  
+  margin: 5px 2px;  
+  font-size: 30px;  
+  width: 50px;  
+}  
+.fa-facebook {  
+  background: #3B5998;  
+  color: white;  
+}  
+.fa-twitter {  
+  background: #55ACEE;  
+  color: white;  
+}   
+.fa-linkedin {  
+  background: #007bb5;  
+  color: white;  
+}  
+.fa-instagram {  
+  background: #125688;  
+  color: white;  
+}  
+.fa-youtube {  
+  background: #bb0000;  
+  color: white;  
+}  
+
+.fa:hover {  
+    opacity: 0.9;  
+}  
+</style>
+<script type="text/javascript">
+
+function verify()
+{
+	var name = document.getElementById("name");
+	var mail = document.getElementById("mail");
+	var gender = document.getElementsByName("gender");
+	var pass = document.getElementById("pass");
+	var birthday = document.getElementById("birth");
+	var phone = document.getElementById("no");
+	var mark10 = document.getElementById("mark10");
+	var mark12 = document.getElementById("mark12");
+	var msg = new Array();
+	var flag = 1;
+	var message = "Following Details are Required\n";
+	var message2 = "Following Details are Required<br>";
+	if(name.value == "")
+	{
+		msg[0] = "Name is Required";
+		flag = 0;
+	} else { msg[0] = ""; }
+
+	var mailformat = /^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/;
+	if(mail.value.match(mailformat))
+    {
+      alert("You have entered a valid email address!");    //The pop up alert for a valid email address
+      document.form1.text1.focus();
+      return true;
+    }
+    else
+    {
+      //alert("You have entered an invalid email address!");    //The pop up alert for an invalid email address
+      //document.form1.text1.focus();
+      return true	;
+    }
+	
+	if(gender[0].checked == false && gender[1].checked == false)
+	{
+		msg[1] = "Select Gender";
+		flag = 0;
+	} else { msg[1] = ""; }
+		
+	if(pass.value == "")
+	{
+		msg[2] = "Password is Required";
+		flag = 0;
+	} else { msg[2] = ""; }
+	
+	if(pass.value.length < 8)
+	{
+		msg[3] = "Password must be 8 characters long";
+
+		flag = 0;
+	} else { msg[3] = ""; }
+	
+	if(flag == 0)
+	{
+		// Show Error Messages
+		for(var x=0;x<=3;x++)
+		{
+			if(msg[x] != "")
+			{
+				message += msg[x] + "\n";
+				message2 += msg[x] + "<br>";
+			}
+		}
+		alert(message);
+		document.getElementById("abc").innerHTML = "<p style='color:red;'>"+message2+"</p>";
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+	if(birthday == "")
+	{
+		alert("Date of Birth is Required");
+	}
+	else
+	{
+
+	}	
+}
+
+</script>
+</head>
+<body style="background-image: url('https://img.freepik.com/premium-vector/vector-seamless-pattern-lock-editable-can-be-used-web-page-backgrounds-pattern-fills_159242-1363.jpg?w=1480');">
+<div align="center">
+	  <div>
+	  	<nav class="navbar navbar-expand-xxl navbar-dark bg-dark" aria-label="Seventh navbar example">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleXxl" aria-controls="navbarsExampleXxl" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span><br>
+      </button>
+
+      <div class="navbar-collapse collapse show" id="navbarsExampleXxl">
+        <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">About </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Eligibility</a></li>
+              <li><a class="dropdown-item" href="#">Notices</a></li>
+              <li><a class="dropdown-item" href="#">Help</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form role="search">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search" style="background-color: white;">
+        </form>
+      </div>
+    </div>
+  </nav>
+  </div><br><br>
+  <marquee width="60%" direction="left" height="100px" style="font-size: 20px;">
+*****First Year Provisional Admission Form*****
+</marquee>
+   <form method="post" action="/action_page.php" onSubmit="return verify()">
+    <table border="5" cellspacing="0" cellpadding="10" bgcolor="lightblue" style="border-style: outset; border-color: darkblue;" class="mb3">
+        <tr>
+        	<td colspan="2" align="center" style="color:red; font-size:18pt;">* All fields are mandatory</td>
+       </tr>
+        <tbody class="table-group-divider">
+       <tr>
+       	<td>Name: </td>
+        <td><input type="text" name="name" required id="name" size="25" placeholder="Enter Name" /></td>
+       </tr>
+       <tr>
+       	<td>Gender:</td>
+        <td><input type="radio" name="gender" value="Male" /> Male
+        	<input type="radio" name="gender" value="Female" /> Female
+        	<input type="radio" name="gender" value="Neuter" /> Neuter
+        </td>
+        </tr>
+        <tr>
+        	<td>Mail id:</td>
+        	<td><input type="email" required name="mail" size="25" id="mail" class="" placeholder="example@example.com"></input></td>
+        </tr>
+        <tr>
+        	<td>Password:</td>
+            <td><input type="password" required name="password" size="25" id="pass" placeholder="Enter Password" /></td>
+        </tr>
+        <tr>
+        	<td><label for="birthday">Birthday Date</label></td>
+        	<td><input style="background-color:#00FFFF;" type="date" name="birthday" size="25" id="birthday" placeholder="Enter your date of birth" required></input>
+
+
+        	</td>
+        </tr>
+        <tr>
+        	<td><label for="phone">Phone NO.<br><pre>  </pre></label></td>
+        	<td><input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required size="25" id="phone" placeholder="Enter your 10 digit mobile no." ></input><p style="color:red; font-size: 15px">Format:     (123-456-7890)</p></td>
+        </tr>
+        <tr>
+        	<td>SSC/CBSC<br>(10th Mark):</td>
+        	<td><input input type="mark10" name="mark10" size="25" id="mark10" pattern="[0-9]{3}" required placeholder="Enter your 10th mark" ></input><p style="color:red; font-size: 15px">Format:  (009)</p></td>
+        </tr>
+        <tr>
+        	<td>HHC/CBSC<br>(12th Mark):</td>
+        	<td><input input type="mark12" name="mark12" pattern="[0-9]{3}" required size="25" id="mark12" placeholder="Enter your 12th mark" ></input><p style="color:red; font-size: 15px">Format:   (009)</p></td>
+        </tr>
+            <tr>
+            	<td align="center" colspan="2">
+            		 <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div>
+                <button type="submit" value="REGISTER">Submit</button>
+                <button type="reset" value="CLEAR">Reset</button>
+                </td>
+            </tr> 
+    </table>
+   </form>
+    <br>
+	<br>
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-white text-muted">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+
+    <!-- Right -->
+    <div style="color:white; background-color:black;">
+      <a href="https://www.facebook.com/sbjitmr/" class="fa fa-facebook" >
+      	<i class="fab fa-facebook-f"></i>
+      </a>  
+      <a href="https://twitter.com/search?lang=en&src=hashtag_click&q=%23SBJITMR" class="fa fa-twitter">
+      	<i class="fab fa-twitter"></i>
+      </a>  
+      <a href="https://in.linkedin.com/school/officialsbjain/" class="fa fa-linkedin">
+      	<i class="fab fa-linkedin-in"></i>
+      </a>  
+      <a href="https://www.instagram.com/officialsbjain/?hl=en" class="fa fa-instagram">
+      	<i class="fab fa-instagram"></i>
+      </a>  
+      <a href="https://www.youtube.com/@sbjaininstituteoftechnolog5367/videos" class="fa fa-youtube">
+      	<i class="fab fa-youtube"></i>
+      </a>  
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="" style="background-color:black;">
+    <div class="container text-center text-md-start mt-5" style="background-color:black;">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 text-secondary"></i>SBJITMR
+          </h6>
+          <p>
+            Autonomous Institute, approved by AICTE (New Delhi) & DTE (Mumbai), is affiliated to Nagpur University (RTMNU) and recognized by Government of Maharashtra. 
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Courses
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">B.Tech</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">MBA</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">M.Tech</a>
+          </p>
+          
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Useful links
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Registration</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Department</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3 text-secondary"></i>Near Jain International School,Yerla, Kalmeshwar Road, Nagpur-441501</p>
+          <p>
+            <i class="fas fa-envelope me-3 text-secondary"></i>
+             info@sbjit.edu.in
+          </p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> + 012-345-6788</p>
+          <p><i class="fas fa-print me-3 text-secondary"></i> + 012-345-6789</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: darkblue;">
+  	<pre style="color:red; font-size:20px">
+         © 2022 Copyright: Amit Anil Rahangdale | ME20029 | Department:Mechanical Engineering
+    </pre>      
+    <a class="text-reset fw-bold" href="https://www.sbjit.edu.in/">S. B. JAIN INSTITUTE OF TECHNOLOGY, MANAGEMENT & RESEARCH, NAGPUR.</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+</div>
+</body>
+</html>
